@@ -20,7 +20,7 @@ export const APIKeyModal: React.FC<APIKeyModalProps> = ({ isOpen, onSubmit }) =>
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 w-full max-w-md">
+      <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-md">
         <div className="flex items-center gap-3 mb-4">
           <Key className="w-6 h-6 text-blue-600" />
           <h2 className="text-xl font-semibold text-gray-800">Enter OpenAI API Key</h2>

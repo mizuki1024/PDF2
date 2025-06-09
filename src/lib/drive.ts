@@ -1,4 +1,3 @@
-import { google } from '@googleapis/drive';
 
 export class DriveService {
   private accessToken: string;

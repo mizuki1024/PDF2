@@ -6,6 +6,12 @@ import { Notes } from './Notes';
 import { useAuth } from '../context/AuthContext';
 import type { PDFDocument } from '../types';
 
+interface DriveFile {
+  id: string;
+  name: string;
+  webViewLink: string;
+}
+
 export const Dashboard: React.FC = () => {
   const { user, driveService } = useAuth();
   const [documents, setDocuments] = React.useState<PDFDocument[]>([]);
@@ -22,7 +28,7 @@ export const Dashboard: React.FC = () => {
     try {
       setIsSyncing(true);
       const files = await driveService.listPDFs();
-      const newDocs: PDFDocument[] = files.map((file: any) => ({
+      const newDocs: PDFDocument[] = (files as DriveFile[]).map((file: DriveFile) => ({
         id: file.id,
         name: file.name,
         url: file.webViewLink,
@@ -143,7 +149,7 @@ export const Dashboard: React.FC = () => {
       />
       
       {selectedDocument ? (
-        <div className="flex-1 p-6 overflow-hidden grid grid-cols-[1fr,1fr] gap-6">
+        <div className="flex-1 p-6 overflow-hidden grid grid-cols-[350px,1fr] gap-6">
           <div className="flex flex-col gap-6 min-h-0">
             <div className="flex-1 min-h-0">
               <Summary

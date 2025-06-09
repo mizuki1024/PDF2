@@ -50,8 +50,8 @@ export const Summary: React.FC<SummaryProps> = ({
   return (
     <>
       <div className="h-full bg-white rounded-lg shadow-sm flex flex-col overflow-hidden">
-        <div className="flex justify-between items-center p-4 border-b border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-800">Summary</h3>
+        <div className="flex justify-between items-center p-4 border-b border-gray-100">
+          <h3 className="text-lg font-semibold text-gray-900">Summary</h3>
           <button
             onClick={handleGenerateSummary}
             disabled={isGenerating || !pdfText}
