@@ -14,9 +14,9 @@ export const Auth: React.FC = () => {
       setIsLoading(true);
       setError('');
       await signInWithGoogle();
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Googleログインエラー:', err);
-      if (err?.code === 'auth/popup-blocked') {
+      if ((err as { code?: string })?.code === 'auth/popup-blocked') {
         setError('ポップアップがブロックされました。以下の手順で許可してください：\n1. ブラウザのアドレスバーのポップアップブロックアイコンをクリック\n2. このサイトを許可\n3. 再度ログインボタンをクリック');
       } else {
         setError('ログインに失敗しました。もう一度お試しください。');

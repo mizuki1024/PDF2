@@ -54,9 +54,9 @@ export const PDFList: React.FC<PDFListProps> = ({
   };
 
   return (
-    <div className="w-64 bg-white border-r border-gray-200 p-4">
+    <div className="w-64 bg-white border-r border-gray-200 p-4 shadow-sm">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold text-gray-800">Documents</h2>
+        <h2 className="text-lg font-semibold text-gray-900">Documents</h2>
         <div className="flex gap-2">
           {isLoggedIn && (
             <button
